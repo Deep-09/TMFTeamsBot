@@ -27,7 +27,7 @@ namespace LuisBot.Dialogs
             var rss = JObject.Parse(response);                        //Get Status Response(response from ae)
             string AeRequestStatus = (string)rss["workflowResponse"];  //Get Status Response(response from ae)
             rss = JObject.Parse(AeRequestStatus);                      //Get Status Response(response from ae)
-            string aemessage = (string)rss["error"];                   //Get Status Response(response from ae)
+            string aemessage = (string)rss["message"];                   //Get Status Response(response from ae)
 
 
             var userAccount = new ChannelAccount(toId, toName);
