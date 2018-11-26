@@ -37,7 +37,7 @@ namespace Microsoft.Bot.Sample.LuisBot
             string username = context.Activity.From.Name;
             var message = context.MakeMessage();
             message.Text = actionResult != null ? actionResult.ToString() : "Cannot resolve your query";
-            await context.PostAsync("Hello"+username+ "!" + message);
+            await context.PostAsync("Hello "+username+ "! " + message.Text);
         }
 
         [LuisIntent("Create AD User")]
