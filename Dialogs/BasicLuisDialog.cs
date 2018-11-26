@@ -34,9 +34,10 @@ namespace Microsoft.Bot.Sample.LuisBot
         [LuisIntent("Greeting")]
         public async Task IntentGreetingHandlerAsync(IDialogContext context, object actionResult)
         {
+            string username = context.Activity.From.Name;
             var message = context.MakeMessage();
             message.Text = actionResult != null ? actionResult.ToString() : "Cannot resolve your query";
-            await context.PostAsync(message);
+            await context.PostAsync("Hello"+username+ "!" + message);
         }
 
         [LuisIntent("Create AD User")]
