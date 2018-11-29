@@ -35,9 +35,18 @@ namespace Microsoft.Bot.Sample.LuisBot
         public async Task IntentGreetingHandlerAsync(IDialogContext context, object actionResult)
         {
             string username = context.Activity.From.Name;
+
+
+            string toId = context.Activity.From.Id;
+            string fromId = context.Activity.Recipient.Id;
+            string fromName = context.Activity.Recipient.Name;
+            string serviceUrl = context.Activity.ServiceUrl;
+            string channelId = context.Activity.ChannelId;
+            string conversationId = context.Activity.Conversation.Id;
+
             var message = context.MakeMessage();
             message.Text = actionResult != null ? actionResult.ToString() : "Cannot resolve your query";
-            await context.PostAsync("Hello "+username+ "! " + message.Text);
+            await context.PostAsync("Hello "+username+" "+toId + " " + fromId + " " + fromName + " " + serviceUrl + " " + channelId + " " + conversationId + " "+ "! " + message.Text);
         }
 
         [LuisIntent("Create AD User")]
