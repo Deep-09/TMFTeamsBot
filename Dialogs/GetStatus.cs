@@ -16,7 +16,7 @@ namespace LuisBot.Dialogs
     {
         public string GetStatusAECall(string aeid)
         {
-            var client = new RestClient("https://232bd378.ngrok.io/aeengine/rest/authenticate");
+            var client = new RestClient("https://e29b24de.ngrok.io/aeengine/rest/authenticate");
             var request = new RestRequest(Method.POST);
             request.AddHeader("postman-token", "ea502694-bf8a-9c2e-e27b-8082381ce137");
             request.AddHeader("cache-control", "no-cache");
@@ -30,7 +30,7 @@ namespace LuisBot.Dialogs
             
             
             
-            //var request1 = new RestRequest("http://10.51.28.19:8080/aeengine/rest/workflowinstances?offset=0&size=1", Method.POST);
+            //var request1 = new RestRequest("https://e29b24de.ngrok.io/aeengine/rest/workflowinstances?offset=0&size=1", Method.POST);
             //request1.AddHeader("X-session-token", token);
             //Console.WriteLine("token is"+token);
             //JavaScriptSerializer serialiser = new JavaScriptSerializer();
@@ -40,7 +40,7 @@ namespace LuisBot.Dialogs
 
 
             HttpClient Adclient = new HttpClient();
-            Adclient.BaseAddress = new Uri("https://232bd378.ngrok.io/");
+            Adclient.BaseAddress = new Uri("https://e29b24de.ngrok.io/");
             Adclient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json")); ;
             Adclient.DefaultRequestHeaders.Add("X-session-token", token);
 
