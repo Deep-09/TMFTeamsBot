@@ -37,12 +37,12 @@ namespace Microsoft.Bot.Sample.LuisBot
             string username = context.Activity.From.Name;
 
 
-            string toId = context.Activity.From.Id;
-            string fromId = context.Activity.Recipient.Id;
-            string fromName = context.Activity.Recipient.Name;
-            string serviceUrl = context.Activity.ServiceUrl;
-            string channelId = context.Activity.ChannelId;
-            string conversationId = context.Activity.Conversation.Id;
+            //string toId = context.Activity.From.Id;
+            //string fromId = context.Activity.Recipient.Id;
+            //string fromName = context.Activity.Recipient.Name;
+            //string serviceUrl = context.Activity.ServiceUrl;
+            //string channelId = context.Activity.ChannelId;
+            //string conversationId = context.Activity.Conversation.Id;
 
             var message = context.MakeMessage();
             message.Text = actionResult != null ? actionResult.ToString() : "Cannot resolve your query";
