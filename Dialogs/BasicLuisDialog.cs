@@ -7,6 +7,7 @@ using Microsoft.Bot.Builder.Luis;
 using LuisBot.Dialogs;
 using Microsoft.Cognitive.LUIS.ActionBinding.Bot;
 using System.Reflection;
+using Microsoft.Bot.Builder.Luis.Models;
 
 namespace Microsoft.Bot.Sample.LuisBot
 {
@@ -169,10 +170,11 @@ namespace Microsoft.Bot.Sample.LuisBot
             ConversationStarter.serviceUrl = context.Activity.ServiceUrl;
             ConversationStarter.channelId = context.Activity.ChannelId;
             ConversationStarter.conversationId = context.Activity.Conversation.Id;
+            string entities = result.Entities.ToString();
 
             var message = context.MakeMessage();
             message.Text = actionResult != null ? actionResult.ToString() : "Cannot resolve your query";
-            await context.PostAsync(message);
+            await context.PostAsync(entities);
         }
 
         //[LuisIntent("Check Incident Status")]

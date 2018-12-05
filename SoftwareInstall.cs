@@ -6,6 +6,7 @@ using System.Runtime.Remoting.Contexts;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
+using Microsoft.Bot.Builder.Luis.Models;
 using Microsoft.Cognitive.LUIS.ActionBinding;
 using RestSharp;
 
@@ -35,6 +36,7 @@ namespace LuisBot.Dialogs
 
         public override Task<object> FulfillAsync()
         {
+         
             Dictionary<string, string> MyEntities = new Dictionary<string, string>();
 
             MyEntities.Add("hostIP", this.hostIP);
