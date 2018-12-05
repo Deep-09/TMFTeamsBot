@@ -170,7 +170,6 @@ namespace Microsoft.Bot.Sample.LuisBot
             ConversationStarter.serviceUrl = context.Activity.ServiceUrl;
             ConversationStarter.channelId = context.Activity.ChannelId;
             ConversationStarter.conversationId = context.Activity.Conversation.Id;
-            string entities = result.Entities.ToString();
 
             var message = context.MakeMessage();
             message.Text = actionResult != null ? actionResult.ToString() : "Cannot resolve your query";
