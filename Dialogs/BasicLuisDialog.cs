@@ -173,7 +173,7 @@ namespace Microsoft.Bot.Sample.LuisBot
 
             var message = context.MakeMessage();
             message.Text = actionResult != null ? actionResult.ToString() : "Cannot resolve your query";
-            await context.PostAsync(entities);
+            await context.PostAsync(message);
         }
 
         //[LuisIntent("Check Incident Status")]
