@@ -21,9 +21,7 @@ namespace LuisBot.Dialogs
         [LuisActionBindingParam(CustomType = "hostIP", Order = 1)]
         //CustomType/BuiltinType = (Entity name in LUIS)
         public string hostIP { get; set; }
-
-
-
+        
         //[Required(ErrorMessage = "Thanks! I can help you with these software installation. Please select one of the software below.\"< br ><input type = 'button' class='button' id='notepad++' value='Notepad++' onclick=\"button_send('Notepad++');\"/><input type = 'button' class='button' id='adobe_reader' value='Adobe Reader' onclick=\"button_send('Adobe Reader');\"/><input type = 'button' class='button' id='nodejs' value='Node.js' onclick=\"button_send('Node.js');\"/>")]
         [Required(ErrorMessage = "Thanks! I can help you with these software installation. Please select one of the software below.\n 1. Notepad++ \n2. Adobe Reader \n3. nodejs")]
         [LuisActionBindingParam(CustomType = "software", Order = 1)]
