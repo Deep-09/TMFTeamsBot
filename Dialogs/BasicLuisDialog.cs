@@ -154,6 +154,8 @@ namespace Microsoft.Bot.Sample.LuisBot
             ConversationStarter.channelId = context.Activity.ChannelId;
             ConversationStarter.conversationId = context.Activity.Conversation.Id;
 
+
+
             var message = context.MakeMessage();
             message.Text = actionResult != null ? actionResult.ToString() : "Cannot resolve your query";
             await context.PostAsync(message);
