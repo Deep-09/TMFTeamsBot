@@ -12,7 +12,7 @@ namespace LuisBot.Dialogs
     {
         public string AECall(Dictionary<string, string> MyEntities,string intentsr)
         {
-            var client = new RestClient("https://7804d499.ngrok.io/aeengine/rest/authenticate"); //ae authentication
+            var client = new RestClient("https://c610d431.ngrok.io/aeengine/rest/authenticate"); //ae authentication
             var request = new RestRequest(Method.POST);
             request.AddHeader("postman-token", "ea502694-bf8a-9c2e-e27b-8082381ce137");
             request.AddHeader("cache-control", "no-cache");
@@ -23,7 +23,7 @@ namespace LuisBot.Dialogs
             jsonresult = response.Content;
             var myDetails = JsonConvert.DeserializeObject<MyDetail>(jsonresult);
             string token = myDetails.sessionToken; //authenticate result (session token)
-            var request1 = new RestRequest("https://7804d499.ngrok.io/aeengine/rest/execute", Method.POST); //workflow execution
+            var request1 = new RestRequest("https://c610d431.ngrok.io/aeengine/rest/execute", Method.POST); //workflow execution
             request1.AddHeader("X-session-token", token);
 
             JavaScriptSerializer serialiser = new JavaScriptSerializer();
