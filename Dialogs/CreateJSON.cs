@@ -23,7 +23,7 @@ namespace LuisBot.Dialogs
             jsonresult = response.Content;
             var myDetails = JsonConvert.DeserializeObject<MyDetail>(jsonresult);
             string token = myDetails.sessionToken; //authenticate result (session token)
-            var request1 = new RestRequest("https://c610d431.ngrok.io   /aeengine/rest/execute", Method.POST); //workflow execution
+            var request1 = new RestRequest("https://c610d431.ngrok.io/aeengine/rest/execute", Method.POST); //workflow execution
             request1.AddHeader("X-session-token", token);
 
             JavaScriptSerializer serialiser = new JavaScriptSerializer();
