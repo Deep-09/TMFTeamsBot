@@ -39,18 +39,22 @@ namespace LuisBot.Dialogs
          
             Dictionary<string, string> MyEntities = new Dictionary<string, string>();
 
+
+            
+            MyEntities.Add("socket_id", "/customer#VgP_SYSO6l2wE36uAAAC");
             MyEntities.Add("hostIP", this.hostIP);
             MyEntities.Add("SoftwareName", this.software);
+            //MyEntities.Add("SoftwareName", "nppp.msi");
 
             CreateJSON createJSON = new CreateJSON();
 
-            aeRequestIdSI = createJSON.AECall(MyEntities, "PR_SoftwareInstallMain");
+            aeRequestIdSI = createJSON.AECall(MyEntities, "SoftwareInstall RFN-V2");
             //GetStatus getStatus = new GetStatus();
             //Thread.Sleep(15000);
             //string response = getStatus.GetStatusAECall(aeRequestId);
 
             t = new Timer(new TimerCallback(timerEvent));
-            t.Change(40000, Timeout.Infinite);
+            t.Change(50000, Timeout.Infinite);
 
             
 
