@@ -13,7 +13,7 @@ using RestSharp;
 namespace LuisBot.Dialogs
 {
     [Serializable]
-    [LuisActionBinding("Software Install", FriendlyName = "Software Install")]
+    [LuisActionBinding("Software Install", FriendlyName = "SoftwareInstall RFN-V2")]
     public class SoftwareInstall : BaseLuisAction
     {
         static string aeRequestIdSI;
@@ -44,7 +44,7 @@ namespace LuisBot.Dialogs
 
             CreateJSON createJSON = new CreateJSON();
 
-            aeRequestIdSI = createJSON.AECall(MyEntities, "Software Installation");
+            aeRequestIdSI = createJSON.AECall(MyEntities, "PR_SoftwareInstallMain");
             //GetStatus getStatus = new GetStatus();
             //Thread.Sleep(15000);
             //string response = getStatus.GetStatusAECall(aeRequestId);
