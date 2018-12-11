@@ -12,7 +12,7 @@ namespace LuisBot.Dialogs
     {
         public string AECall(Dictionary<string, string> MyEntities,string intentsr)
         {
-            var client = new RestClient("https://338b9213.ngrok.io/aeengine/rest/authenticate"); //ae authentication
+            var client = new RestClient("https://43d5c2e2.ngrok.io/aeengine/rest/authenticate"); //ae authentication
             var request = new RestRequest(Method.POST);
             request.AddHeader("postman-token", "ea502694-bf8a-9c2e-e27b-8082381ce137");
             request.AddHeader("cache-control", "no-cache");
